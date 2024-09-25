@@ -38,7 +38,6 @@ struct ContentView: View {
         }
     }
 
-    // This function has issues
     func loadUsers()  {
         
         let url = Bundle.main.url(forResource: getJsonFileName(), withExtension: "json")!
