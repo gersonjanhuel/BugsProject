@@ -38,16 +38,15 @@ struct ContentView: View {
         }
     }
 
-    // This function has issues
     func loadUsers()  {
         
         let url = Bundle.main.url(forResource: getJsonFileName(), withExtension: "json")!
         
         let data = try? Data(contentsOf: url)
         
-        let decodedUsers = try? JSONDecoder().decode([User].self, from: data!)
+        let decodedUsers = try! JSONDecoder().decode([User].self, from: data!)
         
-        self.users = decodedUsers!
+        self.users = decodedUsers
         
     }
     
