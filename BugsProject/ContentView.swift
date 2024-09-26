@@ -30,7 +30,7 @@ struct ContentView: View {
             }
             .navigationTitle("User List")
             .onAppear {
-                loadUsers()
+                doSomething()
             }
             .sheet(item: $selectedUser) { user in
                 UserDetailsView(user: user)
@@ -53,6 +53,10 @@ struct ContentView: View {
     func getJsonFileName() -> String {
         jsonFileName = "users"
         return "user"
+    }
+    
+    func doSomething() {
+        loadUsers()
     }
 }
 
